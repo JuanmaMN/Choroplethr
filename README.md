@@ -28,10 +28,16 @@ state_choropleth(df_pop_state,
 
 
 
+###### Population of New York State by county - Code
 
+
+```
+zip_choropleth(df_pop_zip, 
+                state_zoom = "new york", 
+                 title="Population of New York State by county") + coord_map()
+```
 
 <img width="404" alt="NewYorkbycountry" src="https://user-images.githubusercontent.com/37122520/57980954-d5c1b380-7a29-11e9-8998-74c909225013.png">
-
 
 
 
