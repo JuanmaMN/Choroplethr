@@ -1,0 +1,138 @@
+---
+title: "Choroplethr - Intro"
+author: "Juanma Martinez"
+date: "19/05/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# install.packages("choroplethr")
+# install.packages("choroplethrMaps")
+# install_github('arilamstein/choroplethrZip@v1.4.0')
+# install.packages("mapproj")
+    
+library(choroplethr)
+library(choroplethrMaps)
+library(choroplethrZip)
+library(mapproj)
+library(ggplot2)
+
+
+# View the data 
+
+data(df_pop_state)
+
+# show the data in the console
+
+View(df_pop_state)
+
+```
+
+
+
+## Choroplethr package
+
+
+New course to learn how to visualize data from the US Census Bureau’s American Community Survey (ACS), using the R package Choroplethr.
+
+- [Choroplethr](https://www.census.gov/data/academy/courses/choroplethr.html)
+- [Guide](https://cran.r-project.org/web/packages/choroplethr/choroplethr.pdf)
+
+
+
+```{r cars, echo=FALSE, warning=FALSE}
+
+state_choropleth(df_pop_state,
+                 title  = "2012 State Population Estimates",
+                 legend = "Population")
+```
+
+
+
+
+#### Map to show states above/below median
+
+
+The following map shows what states are above or below the media population value
+
+```{r pressure, echo=FALSE, warning=FALSE}
+# 2 colors shows which states are above / below median value
+
+state_choropleth(df_pop_state, num_colors=2, 
+                 title  = "2012 State Population Estimates",
+                 legend = "Population")
+```
+
+
+
+
+#### Map with zoom in some states
+
+
+Same graph as below showing three States (California, Oregon, Washington)
+
+```{r calm, echo=FALSE, warning=FALSE}
+
+state_choropleth(df_pop_state, 
+                 zoom = c("california", "oregon", "washington"),
+                 title  = "2012 State Population Estimates - Three States",
+                 legend = "Population")
+
+```
+
+
+
+
+#### Demographics dataset
+
+
+Using the demographics dataset to show "State per Capita Income Estimates" for state.
+
+```{r pressur, echo=FALSE, warning=FALSE}
+data(df_state_demographics)
+
+df_state_demographics$value = 
+  df_state_demographics$per_capita_income
+
+# Note that the state_choropleth function requires two columns:  region and value
+
+state_choropleth(df_state_demographics,
+                 num_colors = 2,
+                 title  = "2013 State Per Capita Income Estimates",
+                 legend = "Dollars")
+```
+
+
+
+
+
+#### New York State by country
+
+
+
+```{r pr, echo=FALSE, warning=FALSE}
+
+library(ggplot2)
+
+data(df_pop_zip)
+
+zip_choropleth(df_pop_zip, state_zoom = "new york", title="Population of New York State by county") + coord_map()
+
+```
+
+
+
+
+
+
+
+
+```{r prtr, echo=FALSE, warning=FALSE}
+ data(df_pop_country)
+    View(df_pop_country)
+    country_choropleth(df_pop_country, "2012 World Bank Populate Estimates")
+
+```
+
