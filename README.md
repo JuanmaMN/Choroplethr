@@ -6,7 +6,7 @@
 
 New course to learn how to visualize data from the US Census Bureau’s American Community Survey (ACS), using the R package Choroplethr.
 
-- [Choroplethr](https://www.census.gov/data/academy/courses/choroplethr.html)
+- [Choroplethr](https://arilamstein.com/census-mapping-course/)
 - [Guide](https://cran.r-project.org/web/packages/choroplethr/choroplethr.pdf)
 
 
