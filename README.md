@@ -12,7 +12,7 @@ New course to learn how to visualize data from the US Census Bureau’s American
 
 
 
-###### 2012 State Population Estimates - Code
+#### 2012 State Population Estimates - Code
 ```
 state_choropleth(df_pop_state,
                  title  = "2012 State Population Estimates",
@@ -28,7 +28,7 @@ state_choropleth(df_pop_state,
 
 
 
-###### Population of New York State by county - Code
+#### Population of New York State by county - Code
 
 
 ```
@@ -42,5 +42,11 @@ zip_choropleth(df_pop_zip,
 
 
 
+#### 2012 World Bank Populate Estimates - Code
+
+```
+    country_choropleth(df_pop_country, "2012 World Bank Populate Estimates")
+
+```
 
 <img width="493" alt="Population" src="https://user-images.githubusercontent.com/37122520/57981143-aa3fc880-7a2b-11e9-8690-ad2015442e72.png">
